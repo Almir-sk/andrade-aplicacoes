@@ -1,0 +1,23 @@
+{% extends 'landpage/base.html' %}
+{% block title %}{{ projeto.nome }} | Triple A{% endblock %}
+{% block content %}
+
+<section class="about-section">
+    <div class="about-content">
+        <h2>{{ projeto.nome }}</h2>
+        <p>{{ projeto.descrição_completa }}</p>
+        
+        <h3>Tecnologias Utilizadas</h3>
+        <ul>
+            {% for tech in projeto.tecnologias %}
+                <li>{{ tech }}</li>
+            {% endfor %}
+        </ul>
+        
+        <div style="margin-top: 2rem;">
+            <a href="{{ projeto.link }}" class="btn-primary">Ver Projeto Completo →</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

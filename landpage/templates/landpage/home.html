@@ -1,0 +1,131 @@
+{% extends 'landpage/base.html' %}
+{% load static %}
+{% block title %}Home | Triple A - Automation, Analytics & Advisory{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Transformando dados complexos em crescimento estratégico</h1>
+        <p>A convergência de automações inteligentes, análises profundas e consultoria especializada para empresas de futuro.</p>
+            <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Começe sua jornada</a>
+            <a href="#methodology" class="btn-secondary">Nossa Metodologia</a>
+        </div>
+    </div>
+</section>
+
+<!-- Three Pillars Section -->
+<section class="pillars" id="solutions">
+    <h2 class="pillars-title">Integrando o seu negócio</h2>
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <img src="{% static 'imagens/automation_icon.png' %}" alt="Automation icon" class="pillar-icon">
+            <h3>AUTOMATION.</h3>
+            <p>Otimizando operações e criando fluxos de trabalho inteligentes que eliminam tarefas repetitivas, reduzem erros e aceleram processos empresariais.</p>
+        </div>
+        
+        <div class="pillar-card">
+            <img src="{% static 'imagens/data-analysis_icon.png' %}" alt="Data Analysis icon" class="pillar-icon">
+            <h3>ANALYTICS.</h3>
+            <p>Transformando dados brutos em insights acionáveis através de visualizações avançadas, modelagem preditiva e informações estratégicas.</p>
+        </div>
+        
+        <div class="pillar-card">
+            <img src="{% static 'imagens/advisory_icon.png' %}" alt="Advisory icon" class="pillar-icon">
+            <h3>ADVISORY.</h3>
+            <p>Gerenciamento estratégico orientando você através da transformação digital, ajudando você a tomar decisões baseadas em dados que impulsionam seu negócio.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Value Proposition Section -->
+<section class="value-proposition" id="methodology">
+    <div class="value-content">
+        <h2>Onde a estratégia encontra a tecnologia</h2>
+        <div class="value-visual">
+            <div class="data-node"></div>
+            <div class="connecting-line"></div>
+            <div class="data-node"></div>
+            <div class="connecting-line"></div>
+            <div class="data-node"></div>
+            <div class="connecting-line"></div>
+            <div class="data-node"></div>
+            <div class="connecting-line"></div>
+            <div class="data-node"></div>
+        </div>
+        <p>Atuação centrada no entendimento profundo das necessidades do cliente e das áreas internas. O profissional conduz diagnósticos, propõe soluções alinhadas à estratégia organizacional, negocia expectativas, viabiliza tecnicamente as demandas e acompanha a adoção das soluções por meio de treinamento, suporte e gestão da mudança.</p>
+    </div>    
+</section>
+<section class="about-section">
+    <div class="about-content">
+        <div>
+            <h2>Metodologia</h2>
+            <p> Em contextos ágeis, destaca-se pela priorização contínua de demandas, interação próxima com stakeholders, entregas incrementais e rápida adaptação a mudanças, o que favorece inovação, velocidade e maior aderência às necessidades do cliente. Já em ambientes tradicionais, atua com forte disciplina de planejamento, controle de escopo, prazos, custos e riscos, garantindo previsibilidade, governança e conformidade com SLAs e KPIs estabelecidos.</p>
+        </div>
+        
+        <h3>Ferramentas</h3>
+        <ul>
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>Plotly</li>
+            <li>Django</li>
+            <li>HTML/CSS</li>
+            <li>SQL</li>
+            <li>Excel</li>
+            <li>VBA</li>
+            <li>Power BI</li>
+            <li>Power Query</li>
+            <li>Power Automate</li>
+            <li>Power Apps</li>
+            <li>Locker</li>
+            <li>n8n</li>
+        </ul>
+        <div>
+            <p>Com uma abordagem focada na eliminação de desperdícios, otimização e automação de processos. O profissional analisa fluxos operacionais ponta a ponta, identifica gargalos, redesenha procedimentos, define métricas de performance e implementa automações para reduzir retrabalho, custos e tempo de execução, promovendo eficiência sustentável e escalabilidade.</p>
+        </div>
+        <h3>Habilidades</h3>
+        <ul>
+            <li>Análise de Dados</li>
+            <li>Pensamento Analítico e Visão Sistêmica</li>
+            <li>Resolução de Problemas</li>
+            <li>Tomada de Decisões</li>
+            <li>Orientação a resultados e redução de custos</li>
+            <li>Gestão de Projetos</li>
+            <li>Gestão de Stakeholders</li>
+            <li>Gestão e Metodologia Ágeis</li>
+            <li>Automação de Processos</li>
+            <li>Gestão de Qualidade</li>
+            <li>Desenvolvimento Web</li>
+        </ul>
+            <div>
+                <p>Cultura Data-driven. Tomada de decisão baseada em dados e indicadores. O profissional estrutura bases de dados, desenvolve dashboards e relatórios em BI, define KPIs estratégicos e operacionais e utiliza análises para apoiar decisões gerenciais, priorizar investimentos, monitorar resultados e antecipar riscos ao negócio.</p>
+            </div>   
+        </div>
+</section>
+
+<!-- Projects Preview -->
+<section class="projects-section" id="projects">
+    <div class="about-content">
+        <h2>Projetos em Destaque</h2>
+        <div class="projects-grid">
+            {% for key, dados in projetos.items %}
+                <div class="project-card">
+                    <a href="{% url 'detalhes_projetos' id_projeto=key %}"><h3>{{ dados.nome }}</h3></a>
+                    <p>{{ dados.descrição }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> 
+
+<!-- Contact Section 
+<section class="about-section" id="contact">
+    <div class="about-content">
+        <h2>Contato</h2>
+        <p>Fique à vontade para entrar em contato comigo para discutir como posso ajudar a transformar seus dados em crescimento estratégico.</p>
+    </div>
+</section>
+ -->
+{% endblock %}

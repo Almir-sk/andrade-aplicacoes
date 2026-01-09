@@ -1,0 +1,24 @@
+{% extends 'landpage/base.html' %}
+{% block title %}Projetos | Triple A{% endblock %}
+{% block content %}
+
+<section class="about-section">
+    <div class="about-content">
+        <h2>Meus Projetos</h2>
+        <p>Aqui estão alguns dos projetos que desenvolvi, demonstrando expertise em automação, análise de dados e desenvolvimento web:</p>
+    </div>
+</section>
+
+<section class="projects-section">
+    <div class="projects-grid">
+        {% for chave, dados in projetos.items %}
+            <div class="project-card">
+                <h3>{{ dados.nome }}</h3>
+                <p>{{ dados.descrição }}</p>
+                <a href="{{ dados.link }}">Ver projeto →</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
