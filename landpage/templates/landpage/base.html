@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Triple A - Automation, Analytics & Advisory{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'landpage/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'landpage/css/styles.css' %}?v=6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,44 +26,45 @@
             </a>
             <ul>
                 <li><a href="{% url 'home' %}" class="hdr-button">Home</a></li>
-                <li><a href="#solutions"       class="hdr-button">Soluções</a></li>
-                <li><a href="#methodology"  class="hdr-button">Metodologia</a></li>
+                <li><a href="#solutions" class="hdr-button">Soluções</a></li>
+                <li><a href="#methodology" class="hdr-button">Metodologia</a></li>
                 <li><a href="#projects" class="hdr-button">Projetos</a></li>
                 <li><a href="#contact" class="cta-button">Agendar Consultoria</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    
+
     <footer>
-        <div class="footer-content" id ="contact">
+        <div class="footer-content" id="contact">
             <div class="footer-section">
                 <h3>Almir Arruda de Andrade</h3>
                 <p>
-                    Atuação profissional pautada por princípios de gestão da qualidade e melhoria 
-                    contínua, com forte integração entre tecnologia e negócio. Possui experiência em 
-                    gestão de projetos, automação de relatórios, definição de KPIs e SLAs, 
-                    desenvolvimento de dashboards e estruturação de processos, além de condução de 
+                    Atuação profissional pautada por princípios de gestão da qualidade e melhoria
+                    contínua, com forte integração entre tecnologia e negócio. Possui experiência em
+                    gestão de projetos, automação de relatórios, definição de KPIs e SLAs,
+                    desenvolvimento de dashboards e estruturação de processos, além de condução de
                     treinamentos, sempre com foco em eficiência operacional e governança.
                 </p>
             </div>
         </div>
-        
+
         <!-- Reestruturando contatos e redes sociais para ficarem lado a lado -->
         <div class="footer-contact">
             <div class="footer-section">
                 <h3>Redes Sociais:</h3>
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/almir-arruda-de-andrade-040b6879/" target="_blank">Linkedin</a></li>
+                    <li><a href="https://www.linkedin.com/in/almir-arruda-de-andrade-040b6879/"
+                            target="_blank">Linkedin</a></li>
                     <li><a href="https://github.com/Almir-sk" target="_blank">Github</a></li>
                     <li><a href="https://www.instagram.com/arrudadeandrade/" target="_blank">Instagram</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Contato</h3>
                 <ul>
@@ -69,7 +74,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2026 Almir de Andrade - Triple A. Todos os direitos reservados.</p>
         </div>
@@ -84,6 +89,7 @@
             </div>
         </div>
         -->
-    </footer>        
+    </footer>
 </body>
+
 </html>

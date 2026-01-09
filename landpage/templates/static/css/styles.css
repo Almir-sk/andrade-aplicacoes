@@ -73,13 +73,15 @@ nav {
 }
 
 .brand-name {
-  font-size: 1em; /* inherits from .logo (1.5rem) */
+  font-size: 1em;
+  /* inherits from .logo (1.5rem) */
   font-weight: 700;
   color: var(--navy-deep);
 }
 
 .brand-subtitle {
-  font-size: 0.5em; /* half the size of the name */
+  font-size: 0.5em;
+  /* half the size of the name */
   color: var(--teal-accent);
   font-weight: 600;
   margin-top: 2px;
@@ -126,8 +128,9 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
 }
+
 .hdr-button {
-  color : var(--navy-deep);
+  color: var(--navy-deep);
   font-weight: 600;
 }
 
@@ -165,20 +168,16 @@ nav ul li a:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: repeating-linear-gradient(
-      0deg,
+  background-image: repeating-linear-gradient(0deg,
       transparent,
       transparent 35px,
       rgba(0, 122, 124, 0.03) 35px,
-      rgba(0, 122, 124, 0.03) 36px
-    ),
-    repeating-linear-gradient(
-      90deg,
+      rgba(0, 122, 124, 0.03) 36px),
+    repeating-linear-gradient(90deg,
       transparent,
       transparent 35px,
       rgba(0, 122, 124, 0.03) 35px,
-      rgba(0, 122, 124, 0.03) 36px
-    );
+      rgba(0, 122, 124, 0.03) 36px);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -380,11 +379,13 @@ nav ul li a:hover::after {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.3);
     opacity: 0.7;
@@ -603,5 +604,11 @@ footer {
 
   .about-section ul {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  header .hdr-button {
+    display: none;
   }
 }
