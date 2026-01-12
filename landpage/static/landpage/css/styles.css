@@ -589,6 +589,18 @@ footer {
   }
 }
 
+@media (max-width: 615px) {
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .brand-text {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   nav ul {
     gap: 1rem;
