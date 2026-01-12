@@ -46,6 +46,29 @@ header {
   min-height: var(--header-height);
 }
 
+@media (max-width: 620px) {
+  header {
+    padding: 1rem 5%;
+    /* Ajuste opcional de respiro */
+  }
+
+  nav {
+    flex-direction: column;
+    /* Move o botão para baixo do logo/texto */
+    gap: 1.5rem;
+    /* Adiciona um espaço entre o topo e o botão */
+    text-align: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    /* Opcional: faz o botão ocupar a largura disponível */
+    display: block;
+    /* Garante que o width funcione corretamente */
+    box-sizing: border-box;
+  }
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -141,6 +164,7 @@ nav ul li a:hover::after {
 }
 
 .cta-button {
+  display: inline-block;
   background: var(--gold-premium);
   color: var(--navy-deep);
   padding: 0.75rem 1.75rem;
@@ -151,7 +175,6 @@ nav ul li a:hover::after {
   box-shadow: 0 4px 15px var(--gold-glow);
   white-space: nowrap;
   font-size: clamp(0.8rem, 2.5vw, 1rem);
-  /* Scales down on smaller screens */
 }
 
 @media (max-width: 480px) {
