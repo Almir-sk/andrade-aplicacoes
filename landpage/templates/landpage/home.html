@@ -8,13 +8,46 @@
 <section class="hero">
     <div class="hero-content">
         <h1>Transformando dados complexos em crescimento estratégico</h1>
-        <p>A convergência de automações inteligentes, análises profundas e consultoria especializada para empresas de futuro.</p>
-            <div class="hero-buttons">
-            <a href="#contact" class="btn-primary">Começe sua jornada</a>
+        <p>A convergência de automações inteligentes, análises profundas e consultoria especializada para empresas de
+            futuro.</p>
+        <div class="hero-buttons">
+            <a href="{% url 'home' %}?contact=True#form" class="btn-primary">Começe sua jornada</a>
             <a href="#methodology" class="btn-secondary">Nossa Metodologia</a>
         </div>
     </div>
 </section>
+
+
+<!-- Form Section -->
+{% if request.GET.contact or form.errors %}
+<section class="form-section" id="form">
+    <div class="form-content">
+        <h2>Entre em contato</h2>
+        <p>Se você está interessado em como podemos ajudar sua empresa, preencha o formulário abaixo e entraremos em
+            contato com você o mais breve possível.</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-primary">Enviar</button>
+            <a href="{% url 'home' %}" class="btn-secondary" style="display:inline-block; text-align:center;">Fechar</a>
+        </form>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- Seção de mensagem de sucesso -->
+{% if messages %}
+<section class="success-message" id="success-message">
+    <div class="success-content">
+        <h2>✓ E-mail enviado com sucesso!</h2>
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        <a href="{% url 'home' %}" class="btn-primary" style="display:inline-block; text-align:center;">Fechar</a>
+    </div>
+</section>
+{% endif %}
 
 <!-- Three Pillars Section -->
 <section class="pillars" id="solutions">
@@ -23,19 +56,22 @@
         <div class="pillar-card">
             <img src="{% static 'imagens/automation_icon.png' %}" alt="Automation icon" class="pillar-icon">
             <h3>AUTOMATION.</h3>
-            <p>Otimizando operações e criando fluxos de trabalho inteligentes que eliminam tarefas repetitivas, reduzem erros e aceleram processos empresariais.</p>
+            <p>Otimizando operações e criando fluxos de trabalho inteligentes que eliminam tarefas repetitivas, reduzem
+                erros e aceleram processos empresariais.</p>
         </div>
-        
+
         <div class="pillar-card">
             <img src="{% static 'imagens/data-analysis_icon.png' %}" alt="Data Analysis icon" class="pillar-icon">
             <h3>ANALYTICS.</h3>
-            <p>Transformando dados brutos em insights acionáveis através de visualizações avançadas, modelagem preditiva e informações estratégicas.</p>
+            <p>Transformando dados brutos em insights acionáveis através de visualizações avançadas, modelagem preditiva
+                e informações estratégicas.</p>
         </div>
-        
+
         <div class="pillar-card">
             <img src="{% static 'imagens/advisory_icon.png' %}" alt="Advisory icon" class="pillar-icon">
             <h3>ADVISORY.</h3>
-            <p>Gerenciamento estratégico orientando você através da transformação digital, ajudando você a tomar decisões baseadas em dados que impulsionam seu negócio.</p>
+            <p>Gerenciamento estratégico orientando você através da transformação digital, ajudando você a tomar
+                decisões baseadas em dados que impulsionam seu negócio.</p>
         </div>
     </div>
 </section>
@@ -55,16 +91,24 @@
             <div class="connecting-line"></div>
             <div class="data-node"></div>
         </div>
-        <p>Atuação centrada no entendimento profundo das necessidades do cliente e das áreas internas. O profissional conduz diagnósticos, propõe soluções alinhadas à estratégia organizacional, negocia expectativas, viabiliza tecnicamente as demandas e acompanha a adoção das soluções por meio de treinamento, suporte e gestão da mudança.</p>
-    </div>    
+        <p>Atuação centrada no entendimento profundo das necessidades do cliente e das áreas internas. O profissional
+            conduz diagnósticos, propõe soluções alinhadas à estratégia organizacional, negocia expectativas, viabiliza
+            tecnicamente as demandas e acompanha a adoção das soluções por meio de treinamento, suporte e gestão da
+            mudança.</p>
+    </div>
 </section>
+
 <section class="about-section">
     <div class="about-content">
         <div>
             <h2>Metodologia</h2>
-            <p> Em contextos ágeis, destaca-se pela priorização contínua de demandas, interação próxima com stakeholders, entregas incrementais e rápida adaptação a mudanças, o que favorece inovação, velocidade e maior aderência às necessidades do cliente. Já em ambientes tradicionais, atua com forte disciplina de planejamento, controle de escopo, prazos, custos e riscos, garantindo previsibilidade, governança e conformidade com SLAs e KPIs estabelecidos.</p>
+            <p>Em contextos ágeis, destaca-se pela priorização contínua de demandas, interação próxima com stakeholders,
+                entregas incrementais e rápida adaptação a mudanças, o que favorece inovação, velocidade e maior
+                aderência às necessidades do cliente. Já em ambientes tradicionais, atua com forte disciplina de
+                planejamento, controle de escopo, prazos, custos e riscos, garantindo previsibilidade, governança e
+                conformidade com SLAs e KPIs estabelecidos.</p>
         </div>
-        
+
         <h3>Ferramentas</h3>
         <ul>
             <li>Python</li>
@@ -83,7 +127,10 @@
             <li>n8n</li>
         </ul>
         <div>
-            <p>Com uma abordagem focada na eliminação de desperdícios, otimização e automação de processos. O profissional analisa fluxos operacionais ponta a ponta, identifica gargalos, redesenha procedimentos, define métricas de performance e implementa automações para reduzir retrabalho, custos e tempo de execução, promovendo eficiência sustentável e escalabilidade.</p>
+            <p>Com uma abordagem focada na eliminação de desperdícios, otimização e automação de processos. O
+                profissional analisa fluxos operacionais ponta a ponta, identifica gargalos, redesenha procedimentos,
+                define métricas de performance e implementa automações para reduzir retrabalho, custos e tempo de
+                execução, promovendo eficiência sustentável e escalabilidade.</p>
         </div>
         <h3>Habilidades</h3>
         <ul>
@@ -99,10 +146,13 @@
             <li>Gestão de Qualidade</li>
             <li>Desenvolvimento Web</li>
         </ul>
-            <div>
-                <p>Cultura Data-driven. Tomada de decisão baseada em dados e indicadores. O profissional estrutura bases de dados, desenvolve dashboards e relatórios em BI, define KPIs estratégicos e operacionais e utiliza análises para apoiar decisões gerenciais, priorizar investimentos, monitorar resultados e antecipar riscos ao negócio.</p>
-            </div>   
+        <div>
+            <p>Cultura Data-driven. Tomada de decisão baseada em dados e indicadores. O profissional estrutura bases de
+                dados, desenvolve dashboards e relatórios em BI, define KPIs estratégicos e operacionais e utiliza
+                análises para apoiar decisões gerenciais, priorizar investimentos, monitorar resultados e antecipar
+                riscos ao negócio.</p>
         </div>
+    </div>
 </section>
 
 <!-- Projects Preview -->
@@ -111,21 +161,58 @@
         <h2>Projetos em Destaque</h2>
         <div class="projects-grid">
             {% for key, dados in projetos.items %}
-                <div class="project-card">
-                    <a href="{% url 'detalhes_projetos' id_projeto=key %}"><h3>{{ dados.nome }}</h3></a>
-                    <p>{{ dados.descrição }}</p>
-                </div>
+            <div class="project-card">
+                <a href="{% url 'detalhes_projetos' id_projeto=key %}">
+                    <h3>{{ dados.nome }}</h3>
+                </a>
+                <p>{{ dados.descrição }}</p>
+            </div>
             {% endfor %}
         </div>
     </div>
-</section> 
-
-<!-- Contact Section 
-<section class="about-section" id="contact">
-    <div class="about-content">
-        <h2>Contato</h2>
-        <p>Fique à vontade para entrar em contato comigo para discutir como posso ajudar a transformar seus dados em crescimento estratégico.</p>
-    </div>
 </section>
- -->
+
+<!-- Adicionando JavaScript para controle do formulário -->
+<script>
+    function mostrarFormulario() {
+        document.getElementById('form').style.display = 'block';
+        document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function fecharFormulario() {
+        document.getElementById('form').style.display = 'none';
+    }
+
+    function enviarFormulario(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+
+        fetch(form.action || window.location.href, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao enviar formulário:', error);
+            });
+
+        return false;
+    }
+
+    function fecharMensagemSucesso() {
+        document.getElementById('success-message').style.display = 'none';
+    }
+</script>
+
 {% endblock %}

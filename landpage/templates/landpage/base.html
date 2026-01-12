@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Triple A - Automation, Analytics & Advisory{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'landpage/css/styles.css' %}?v=6">
+    <link rel="stylesheet" href="{% static 'landpage/css/styles.css' %}?v=7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,7 +29,8 @@
                 <li><a href="#solutions" class="hdr-button">Soluções</a></li>
                 <li><a href="#methodology" class="hdr-button">Metodologia</a></li>
                 <li><a href="#projects" class="hdr-button">Projetos</a></li>
-                <li><a href="#contact" class="cta-button">Agendar Consultoria</a></li>
+                <li><a href="{% url 'home' %}?contact=True#form" class="cta-button">Agendar
+                        Consultoria</a></li>
             </ul>
         </nav>
     </header>
@@ -43,17 +44,13 @@
         <div class="footer-content" id="contact">
             <div class="footer-section">
                 <h3>Almir Arruda de Andrade</h3>
-                <p>
-                    Atuação profissional pautada por princípios de gestão da qualidade e melhoria
-                    contínua, com forte integração entre tecnologia e negócio. Possui experiência em
-                    gestão de projetos, automação de relatórios, definição de KPIs e SLAs,
-                    desenvolvimento de dashboards e estruturação de processos, além de condução de
-                    treinamentos, sempre com foco em eficiência operacional e governança.
-                </p>
+                <p>Atuação profissional pautada por princípios de gestão da qualidade e melhoria contínua, com forte
+                    integração entre tecnologia e negócio. Possui experiência em gestão de projetos, automação de
+                    relatórios, definição de KPIs e SLAs, desenvolvimento de dashboards e estruturação de processos,
+                    além de condução de treinamentos, sempre com foco em eficiência operacional e governança.</p>
             </div>
         </div>
 
-        <!-- Reestruturando contatos e redes sociais para ficarem lado a lado -->
         <div class="footer-contact">
             <div class="footer-section">
                 <h3>Redes Sociais:</h3>
@@ -78,18 +75,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Almir de Andrade - Triple A. Todos os direitos reservados.</p>
         </div>
-        <!--
-                <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Stay updated with our latest insights and solutions.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        -->
     </footer>
+
+
 </body>
 
 </html>

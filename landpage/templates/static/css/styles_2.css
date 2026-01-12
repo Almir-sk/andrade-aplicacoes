@@ -246,6 +246,28 @@ nav ul li a:hover::after {
   transform: translateY(-3px);
 }
 
+
+/* Form Section */
+.form-section {
+  background: var(--white-clean);
+  padding: 6rem 5%;
+}
+
+.form-section h2 {
+  font-size: 2.5rem;
+  color: var(--navy-deep);
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--teal-accent);
+  padding-left: 1.5rem;
+}
+
+.form-section p {
+  font-size: 1.2rem;
+  color: var(--navy-deep);
+  margin-bottom: 2rem;
+}
+
+
 /* Three Pillars Section */
 .pillars {
   background: var(--white-clean);
